@@ -4,6 +4,8 @@ a casper7 plugin that reacts to wordle results
 Usage:
     casper7-plugin-wordle-reactions [options] react <args>
     casper7-plugin-wordle-reactions --listeners
+    casper7-plugin-wordle-reactions --commands
+    casper7-plugin-wordle-reactions --jobs
     casper7-plugin-wordle-reactions (-h | --help)
     casper7-plugin-wordle-reactions --version
 
@@ -13,6 +15,8 @@ Options:
     -u --user USER_ID           User ID the message is coming from.
     -m --message MESSAGE_ID     ID of the message that was sent.
     --listeners                 Get listener config JSON.
+    --commands                  Get command config JSON.
+    --jobs                      Get job config JSON.
     -h --help                   Show this screen.
     --version                   Show version.
 """
@@ -57,13 +61,11 @@ def print_listeners() -> None:
     """Print listener config JSON."""
     print(
         json.dumps(
-            {
-                "listeners": [
-                    {
-                        "name": "react",
-                    }
-                ]
-            }
+            [
+                {
+                    "name": "react",
+                }
+            ]
         )
     )
 
@@ -102,5 +104,9 @@ def plugin() -> None:
     match args:
         case {"--listeners": True}:
             print_listeners()
+        case {"--commands": True}:
+            print("[]")
+        case {"--jobs": True}:
+            print("[]")
         case {"react": True, "<args>": {"message": message}}:
             maybe_react(message, channel_id=channel_id, message_id=message_id)
