@@ -28,27 +28,33 @@ from docopt import docopt
 
 from casper7_plugin_wordle_reactions.settings import settings
 
+
+def re_compile(pattern: str) -> re.Pattern:
+    """Compile a regex pattern."""
+    return re.compile(pattern, re.IGNORECASE | re.MULTILINE)
+
+
 reactions = [
-    (re.compile(r"wordle \d+ [1-6]/6"), ":brain:"),
-    (re.compile(r"wordle \d+ X/6"), ":snail:"),
-    (re.compile(r"daily duotrigordle #\d+\nguesses: \d+/37"), ":brain:"),
-    (re.compile(r"daily duotrigordle #\d+\nguesses: X/37"), ":snail:"),
-    (re.compile(r"scholardle \d+ [1-6]/6"), ":mortar_board:"),
-    (re.compile(r"scholardle \d+ X/6"), ":snail:"),
-    (re.compile(r"worldle #\d+ [1-6]/6 \(100%\)"), ":map"),
-    (re.compile(r"worldle #\d+ X/6 \(\d+%\)"), ":snail:"),
-    (re.compile(r"waffle\d+ [0-5]/5"), ":waffle:"),
-    (re.compile(r"waffle\d+ 5/5"), ":star:"),
-    (re.compile(r"waffle\d+ X/5"), ":snail:"),
-    (re.compile(r"#wafflesilverteam"), ":second_place:"),
-    (re.compile(r"#wafflegoldteam"), ":first_place:"),
-    (re.compile(r"flowdle \d+ \[\d+ moves\]"), ":potable_water:"),
-    (re.compile(r"jurassic wordle \(game #\d+\) - [1-8] / 8"), ":sauropod:"),
-    (re.compile(r"jurassic wordle \(game #\d+\) - X / 8"), ":snail:"),
-    (re.compile(r"jungdle \(game #\d+\) - [1-8] / 8"), ":lion:"),
-    (re.compile(r"jungdle \(game #\d+\) - X / 8"), ":snail:"),
-    (re.compile(r"dogsdle \(game #\d+\) - [1-8] / 8"), ":dog:"),
-    (re.compile(r"dogsdle \(game #\d+\) - X / 8"), ":snail:"),
+    (re_compile(r"wordle \d+ [1-6]/6"), ":brain:"),
+    (re_compile(r"wordle \d+ X/6"), ":snail:"),
+    (re_compile(r"daily duotrigordle #\d+\nguesses: \d+/37"), ":brain:"),
+    (re_compile(r"daily duotrigordle #\d+\nguesses: X/37"), ":snail:"),
+    (re_compile(r"scholardle \d+ [1-6]/6"), ":mortar_board:"),
+    (re_compile(r"scholardle \d+ X/6"), ":snail:"),
+    (re_compile(r"worldle #\d+ [1-6]/6 \(100%\)"), ":map"),
+    (re_compile(r"worldle #\d+ X/6 \(\d+%\)"), ":snail:"),
+    (re_compile(r"waffle\d+ [0-5]/5"), ":waffle:"),
+    (re_compile(r"waffle\d+ 5/5"), ":star:"),
+    (re_compile(r"waffle\d+ X/5"), ":snail:"),
+    (re_compile(r"#wafflesilverteam"), ":second_place:"),
+    (re_compile(r"#wafflegoldteam"), ":first_place:"),
+    (re_compile(r"flowdle \d+ \[\d+ moves\]"), ":potable_water:"),
+    (re_compile(r"jurassic wordle \(game #\d+\) - [1-8] / 8"), ":sauropod:"),
+    (re_compile(r"jurassic wordle \(game #\d+\) - X / 8"), ":snail:"),
+    (re_compile(r"jungdle \(game #\d+\) - [1-8] / 8"), ":lion:"),
+    (re_compile(r"jungdle \(game #\d+\) - X / 8"), ":snail:"),
+    (re_compile(r"dogsdle \(game #\d+\) - [1-8] / 8"), ":dog:"),
+    (re_compile(r"dogsdle \(game #\d+\) - X / 8"), ":snail:"),
     # TODO: framed
     # TODO: moviedle
     # TODO: posterdle
@@ -70,7 +76,7 @@ def print_listeners() -> None:
     )
 
 
-def maybe_react(message: str, *, channel_id: int, message_id: int) -> None:
+def maybe_react(message: str, *, channel_id: str, message_id: str) -> None:
     """Check if a message contains any known patterns and emit add_reaction events."""
     if channel_id not in settings.wordle_channels:
         return
