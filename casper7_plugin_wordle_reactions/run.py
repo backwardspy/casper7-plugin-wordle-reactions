@@ -55,11 +55,16 @@ reactions = [
     (re_compile(r"jungdle \(game #\d+\) - X / 8"), "🐌"),
     (re_compile(r"dogsdle \(game #\d+\) - [1-8] / 8"), "🐶"),
     (re_compile(r"dogsdle \(game #\d+\) - X / 8"), "🐌"),
-    # TODO: framed
-    # TODO: moviedle
-    # TODO: posterdle
-    # TODO: namethatride
-    # TODO: heardle
+    (re_compile(r"framed #\d+.*\n+.*🎥 [🟥⬛ ]*🟩"), "🎬"),
+    (re_compile(r"framed #\d+.*\n+.*🎥 [🟥⬛ ]+$"), "🐌"),
+    (re_compile(r"moviedle #[\d-]+.*\n+.*🎥[🟥⬜⬛️ ]*🟩"), "🎬"),
+    (re_compile(r"moviedle #[\d-]+.*\n+.*🎥[🟥⬜⬛️ ]+$"), "🐌"),
+    (re_compile(r"posterdle #[\d-]+.*\n+.*⌛ [^2️⃣0️⃣]+"), "📯"),
+    (re_compile(r"posterdle #[\d-]+.*\n+.*⌛ 2️⃣0️⃣"), "🐌"),
+    (re_compile(r"namethatride #[\d-]+.*\n+.*⌛ [^2️⃣0️⃣]+"), "🚙"),
+    (re_compile(r"namethatride #[\d-]+.*\n+.*⌛ 2️⃣0️⃣"), "🐌"),
+    (re_compile(r"heardle #\d+.*\n+.*🟩"), "👂"),
+    (re_compile(r"heardle #\d+.*\n+🔇"), "🐌"),
 ]
 
 
