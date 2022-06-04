@@ -49,6 +49,7 @@ reactions = [
     (re_compile(r"#wafflesilverteam"), "🥈"),
     (re_compile(r"#wafflegoldteam"), "🥇"),
     (re_compile(r"flowdle \d+ \[\d+ moves\]"), "🚰"),
+    (re_compile(r"flowdle \d+ \[failed\]"), "🐌"),
     (re_compile(r"jurassic wordle \(game #\d+\) - [1-8] / 8"), "🦕"),
     (re_compile(r"jurassic wordle \(game #\d+\) - X / 8"), "🐌"),
     (re_compile(r"jungdle \(game #\d+\) - [1-8] / 8"), "🦁"),
