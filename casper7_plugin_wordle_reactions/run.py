@@ -2,7 +2,7 @@
 a casper7 plugin that reacts to wordle results
 
 Usage:
-    casper7-plugin-wordle-reactions [options] react <args>
+    casper7-plugin-wordle-reactions [options] react [--] <args>
     casper7-plugin-wordle-reactions --listeners
     casper7-plugin-wordle-reactions --commands
     casper7-plugin-wordle-reactions --jobs
