@@ -36,10 +36,14 @@ def re_compile(pattern: str) -> re.Pattern:
 
 reactions = [
     (re_compile(r"wordle \d+ [1-6]/6"), "🧠"),
+    (re_compile(r"wordle \d+ 1/6"), "1️⃣"),
+    (re_compile(r"wordle \d+ 2/6"), "2️⃣"),
     (re_compile(r"wordle \d+ X/6"), "🐌"),
     (re_compile(r"daily duotrigordle #\d+\nguesses: \d+/37"), "🧠"),
     (re_compile(r"daily duotrigordle #\d+\nguesses: X/37"), "🐌"),
     (re_compile(r"scholardle \d+ [1-6]/6"), "🎓"),
+    (re_compile(r"scholardle \d+ 1/6"), "1️⃣"),
+    (re_compile(r"scholardle \d+ 2/6"), "2️⃣"),
     (re_compile(r"scholardle \d+ X/6"), "🐌"),
     (re_compile(r"worldle #\d+ [1-6]/6 \(100%\)"), "🗺️"),
     (re_compile(r"worldle #\d+ X/6 \(\d+%\)"), "🐌"),
@@ -66,6 +70,8 @@ reactions = [
     (re_compile(r"namethatride #[\d-]+.*\n+ ⌛ .*\n 🚗 [⬜️🟥⬛️ ]+$"), "🐌"),
     (re_compile(r"heardle #\d+.*\n+.*🟩"), "👂"),
     (re_compile(r"heardle #\d+.*\n+🔇"), "🐌"),
+    (re_compile(r"flaggle .*\n+.*\d+ pts"), "⛳"),
+    (re_compile(r"flaggle .*\n+.*gave up"), "🐌"),
 ]
 
 
