@@ -65,6 +65,7 @@ reactions = [
     (re_compile(r"moviedle #[\d-]+.*\n+.*🎥[🟥⬜⬛️ ]*🟩"), "🎬"),
     (re_compile(r"moviedle #[\d-]+.*\n+.*🎥[🟥⬜⬛️ ]+$"), "🐌"),
     (re_compile(r"posterdle #[\d-]+.*\n+ ⌛ .*\n 🍿.+🟩"), "📯"),
+    (re_compile(r"posterdle #[\d-]+.*\n+ ⌛ 0️⃣ .*\n 🍿.+🟩"), "0️⃣"),
     (re_compile(r"posterdle #[\d-]+.*\n+ ⌛ .*\n 🍿 [⬜️🟥⬛️ ]+$"), "🐌"),
     (re_compile(r"namethatride #[\d-]+.*\n+ ⌛ .*\n 🚗.+🟩"), "🚙"),
     (re_compile(r"namethatride #[\d-]+.*\n+ ⌛ .*\n 🚗 [⬜️🟥⬛️ ]+$"), "🐌"),
