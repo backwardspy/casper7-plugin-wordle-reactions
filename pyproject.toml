@@ -21,12 +21,12 @@ enable = true
 [tool.poetry.dependencies]
 python = "^3.10"
 docopt-ng = "^0.8.1"
-pydantic = "^1.9.1"
+pydantic = "^1.10.2"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.3.0"
-pylint = "^2.14.1"
-mypy = "^0.961"
-ward = "^0.66.0b0"
-ptpython = "^3.0.20"
+black = "^22.8.0"
+pylint = "^2.15.2"
+mypy = "^0.971"
+ward = "^0.66.1b0"
 isort = "^5.10.1"
+ipython = "^8.5.0"
