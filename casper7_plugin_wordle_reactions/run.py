@@ -75,6 +75,11 @@ reactions = [
     (re_compile(r"heardle #\d+.*\n+🔇"), "🐌"),
     (re_compile(r"flaggle .*\n+.*\d+ pts"), "⛳"),
     (re_compile(r"flaggle .*\n+.*gave up"), "🐌"),
+    (re_compile(r"#Polygonle \d+ [1-6]/6[^🟧]+?🟩"), "🔷"),
+    (re_compile(r"#Polygonle \d+ [1-6]/6[^🟩]+?🟧"), "🔶"),
+    (re_compile(r"#Polygonle \d+ X/6"), "🐌"),
+    (re_compile(r"#GuessTheGame #\d+.*\n+.*🎮[🟥⬛ ]*🟩"), "🎮"),
+    (re_compile(r"#GuessTheGame #\d+.*\n+.*🎮 [🟥⬛ ]+$"), "🐌"),
 ]
 
 
