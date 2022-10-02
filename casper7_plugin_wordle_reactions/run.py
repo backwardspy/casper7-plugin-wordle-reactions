@@ -83,7 +83,7 @@ reactions = [
     (re_compile(r"https://squaredle\.app/ \d+/\d+:"), "🟩"),
     (re_compile(r"https://squaredle\.app/ .*[^📖]*📖"), "📖"),
     (re_compile(r"https://squaredle\.app/ .*[^⏱️]*️⏱"), "️⏱"),
-    (re_compile(r"https://squaredle\.app/ .*[^🎯]*🎯"), "️🎯"),
+    (re_compile(r"https://squaredle\.app/ .*[^🎯]*🎯"), "🎯"),
     (re_compile(r"https://squaredle\.app/ .*[^🔥]*🔥"), "🔥"),
 ]
 
