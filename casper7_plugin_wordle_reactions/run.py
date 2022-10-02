@@ -80,6 +80,7 @@ reactions = [
     (re_compile(r"#Polygonle \d+ X/6"), "🐌"),
     (re_compile(r"#GuessTheGame #\d+.*\n+.*🎮[🟥⬛ ]*🟩"), "🎮"),
     (re_compile(r"#GuessTheGame #\d+.*\n+.*🎮 [🟥⬛ ]+$"), "🐌"),
+    (re_compile(r"https://squaredle\.app/ \d+/\d+:"), "🟩"),
 ]
 
 
