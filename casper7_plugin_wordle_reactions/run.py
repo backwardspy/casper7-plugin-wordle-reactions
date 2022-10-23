@@ -85,6 +85,8 @@ reactions = [
     (re_compile(r"https://squaredle\.app/ .*[^⏱️]*⏱️"), "⏱️"),
     (re_compile(r"https://squaredle\.app/ .*[^🎯]*🎯"), "🎯"),
     (re_compile(r"https://squaredle\.app/ .*[^🔥]*🔥"), "🔥"),
+    (re_compile(r"Episode #\d+\n+📺 .*🟩"), "📺"),
+    (re_compile(r"Episode #\d+\n+📺 [^🟩]+$"), "🐌"),
 ]
 
 
