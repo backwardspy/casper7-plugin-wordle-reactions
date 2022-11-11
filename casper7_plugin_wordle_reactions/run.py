@@ -103,22 +103,30 @@ def print_listeners() -> None:
     )
 
 
+def print_commands() -> None:
+    print(json.dumps([]))
+
+
+def print_jobs() -> None:
+    print(json.dumps([]))
+
+
 def maybe_react(message: str, *, channel_id: str, message_id: str) -> None:
     """Check if a message contains any known patterns and emit add_reaction events."""
     if channel_id not in settings.wordle_channels:
         return
 
-    events = []
-    for pattern, emoji in reactions:
-        if pattern.search(message):
-            events.append(
-                {
-                    "type": "add_reaction",
-                    "channel_id": channel_id,
-                    "message_id": message_id,
-                    "emoji": emoji,
-                }
-            )
+    events = [
+        {
+            "type": "add_reaction",
+            "channel_id": channel_id,
+            "message_id": message_id,
+            "emoji": emoji,
+        }
+        for pattern, emoji in reactions
+        if pattern.search(message)
+    ]
+
     print(json.dumps(events))
 
 
@@ -138,8 +146,8 @@ def plugin() -> None:
         case {"--listeners": True}:
             print_listeners()
         case {"--commands": True}:
-            print("[]")
+            print_commands()
         case {"--jobs": True}:
-            print("[]")
+            print_jobs()
         case {"react": True, "<args>": {"message": message}}:
             maybe_react(message, channel_id=channel_id, message_id=message_id)
